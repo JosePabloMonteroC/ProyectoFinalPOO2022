@@ -52,6 +52,11 @@ public class ControladorP implements ActionListener{
 				glucosa = Integer.parseInt(PanelUno.entradaG.getText());
 				pulso = Integer.parseInt(PanelUno.entradaP.getText());
 				// Se ejecuta método que guarda registro en la BD.
+				
+				
+				
+				
+				
 				manipulaBase.Insertar(sexo, edad,presion,hipertension,fumador,diabetes,HDL,colesterol,glucosa,pulso); 
 				System.out.println(sexo);
 				System.out.println(edad);
