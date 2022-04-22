@@ -3,6 +3,8 @@ package com.mfg.controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
 import com.mfg.modelo.*;
 import com.mfg.vista.*;
 
@@ -36,23 +38,46 @@ public class ControladorP implements ActionListener{
 		
 		
 			if(e.getSource() == PanelUno.guardar){
+				try {
+					
+				edad = PanelUno.lista.getSelectedItem().toString(); 
+				presion = Float.parseFloat(PanelUno.entradaPS.getText());
+					if (presion>200||presion<40) {
+						throw new Exception("Error en presion");
+					}
+				HDL = Float.parseFloat(PanelUno.entradaHDL.getText());
+					if (HDL>100||HDL<10) {
+						throw new Exception("Error en HDL");
+					}
+				colesterol = Float.parseFloat(PanelUno.entradaC.getText());
+					if (colesterol>280||colesterol<40) {
+						throw new Exception("Error en Colesterol");
+					}
+				glucosa = Integer.parseInt(PanelUno.entradaG.getText());
+					if (glucosa>300||glucosa<50) {
+						throw new Exception("Error en Glucosa");
+					}
+				pulso = Integer.parseInt(PanelUno.entradaP.getText());
+					if (pulso>170||pulso<30) {
+						throw new Exception("Error en Pulso");
+					}
+				
+
 				
 				if (PanelUno.checkBoxSM.isSelected()) sexo = PanelUno.checkBoxSM.getText();
 				else if(PanelUno.checkBoxSF.isSelected()) sexo = PanelUno.checkBoxSF.getText(); 
-				edad = PanelUno.lista.getSelectedItem().toString(); //WEY EN LA BASE DE DATOS CAMBIA EL TIPO DE DATO SEXO A VARCHAR(15)
-				presion = Float.parseFloat(PanelUno.entradaPS.getText());
 				if(PanelUno.checkBoxHS.isSelected()) hipertension = PanelUno.checkBoxHS.getText();
 				else if(PanelUno.checkBoxHN.isSelected()) hipertension = PanelUno.checkBoxHN.getText();
 				if(PanelUno.checkBoxFS.isSelected()) fumador = PanelUno.checkBoxFS.getText();
 				else if(PanelUno.checkBoxFN.isSelected()) fumador = PanelUno.checkBoxFN.getText();
 				if(PanelUno.checkBoxDS.isSelected()) diabetes = PanelUno.checkBoxDS.getText();
 				else if(PanelUno.checkBoxDN.isSelected()) diabetes = PanelUno.checkBoxDN.getText();
-				HDL = Float.parseFloat(PanelUno.entradaHDL.getText());
-				colesterol = Float.parseFloat(PanelUno.entradaC.getText());
-				glucosa = Integer.parseInt(PanelUno.entradaG.getText());
-				pulso = Integer.parseInt(PanelUno.entradaP.getText());
-				// Se ejecuta método que guarda registro en la BD.
-				manipulaBase.Insertar(sexo, edad,presion,hipertension,fumador,diabetes,HDL,colesterol,glucosa,pulso); 
+				if(sexo.isEmpty()||hipertension.isEmpty()||fumador.isEmpty()||diabetes.isEmpty()) {
+					throw new Exception("Error: Datos incompletos");
+				}
+			
+				
+				// Se ejecuta método que guarda registro en la BD.	
 				System.out.println(sexo);
 				System.out.println(edad);
 				System.out.println(presion);
@@ -64,12 +89,24 @@ public class ControladorP implements ActionListener{
 				System.out.println(glucosa);
 				System.out.println(pulso);
 				
+				manipulaBase.Insertar(sexo, edad,presion,hipertension,fumador,diabetes,HDL,colesterol,glucosa,pulso); 
+				
+				} 	catch(Exception ex){
+					JOptionPane.showMessageDialog(null,ex.toString(), "Error de entrada", JOptionPane.ERROR_MESSAGE);
+					
+				}
+				
+				
+
+			
 				}
 			else if(e.getSource() == PanelUno.calcular) {
 				//Aqui se calculara el riesgo cardiovascular
 			}
 			
-			}
-	}
+
+
+		}
+}
 	
 

@@ -66,7 +66,8 @@ public class PanelUno extends JPanel{
 		i.setBackground(new Color(0,114,3));
 		i.setFont(new Font("Arial", Font.BOLD,18));
 		this.add(i);
-		JLabel img = new JLabel(new ImageIcon("C:\\Users\\pepem\\Documents\\ECLIPSE\\ProyectoFinalPOO2022\\ProyFinal2022\\src\\com\\mfg\\vista\\heart.png"));
+		//JLabel img = new JLabel(new ImageIcon("C:\\Users\\pepem\\Documents\\ECLIPSE\\ProyectoFinalPOO2022\\ProyFinal2022\\src\\com\\mfg\\vista\\heart.png"));
+		JLabel img = new JLabel(new ImageIcon("C:\\Users\\Roman\\git\\ProyectoFinalPOO2022\\ProyFinal2022\\src\\com\\mfg\\vista\\heart.png"));
 		img.setPreferredSize(new Dimension(550,550));
 		img.setBounds(30,120,250,250);
 		img.setOpaque(true);
