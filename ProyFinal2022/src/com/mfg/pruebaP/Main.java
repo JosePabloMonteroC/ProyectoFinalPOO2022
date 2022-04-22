@@ -26,7 +26,6 @@ public class Main {
 		ControladorP controlador = new ControladorP(frame1,prueba);
 		frame1.setVisible(true);
 		
-		//prueba.Insertar(0, 33, 43, 0, 0, 0, 33, 11,1,202);
 
 	}
 
