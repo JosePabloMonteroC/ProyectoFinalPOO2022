@@ -30,7 +30,6 @@ public class PanelUno extends JPanel{
 	static JTextField textField;
 	
 	public static JButton guardar = new JButton("Guardar");
-	public static JButton calcular = new JButton("Calcular");
 	public static JRadioButton checkBoxSM = new JRadioButton("Masculino",false);
 	public static JRadioButton checkBoxSF = new JRadioButton("Femenino",false);
 	public static JComboBox<String> lista = new JComboBox<String>(edades);
@@ -203,16 +202,9 @@ public class PanelUno extends JPanel{
 		entradaP.setBounds(373, 412, 112, 20);
 		this.add(entradaP);
 		
-		//Calcular
-		calcular.setBounds(300,465,96,20);
-		calcular.setOpaque(true);
-		calcular.setForeground(Color.WHITE);
-		calcular.setBackground(new Color(0,114,3));
-		calcular.setFont(new Font("Arial",Font.BOLD,15));
-		this.add(calcular);
 		
 		//Guardar
-		guardar.setBounds(450,465,96,20);
+		guardar.setBounds(3500,465,150,40);
 		guardar.setOpaque(true);
 		guardar.setForeground(Color.WHITE);
 		guardar.setBackground(new Color(0,114,3));
