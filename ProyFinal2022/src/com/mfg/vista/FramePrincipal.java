@@ -14,11 +14,18 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import javax.swing.JFrame;
-
+/**
+ * Clase que crea y le da sus caracteristicas al Frame donde se montará la interfaz
+ * @author Emilio Román y José Pablo Montero
+ *
+ */
 public class FramePrincipal extends JFrame{
-	private static final long serialVersion = 1L;
 	
+	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * Método constructor de la clase, se declara el frame, su tamaño, la ubicación, si es escalable, etc.
+	 */
 	public FramePrincipal() {
 		// titulo ventana
 		super("Frame Principal Encuesta");

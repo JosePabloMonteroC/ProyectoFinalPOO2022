@@ -1,6 +1,7 @@
 package com.mfg.controlador;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 
 import javax.swing.Icon;
@@ -9,7 +10,13 @@ import javax.swing.JOptionPane;
 
 import com.mfg.modelo.*;
 import com.mfg.vista.*;
-
+/**
+ * Clase encargada de controlar la interfaz y las acciones que se pueden llevar a cabo en ella. 
+ * Utilizando "Action Listener" se le asignan las acciones a los botones
+ * 
+ * @author Emilio Román y José Pablo Montero
+ *
+ */
 public class ControladorP implements ActionListener{
 	
 	// Instancia del frame principal
@@ -24,8 +31,13 @@ public class ControladorP implements ActionListener{
 	PanelUno.calcular.addActionListener(this);
 	}
 	
-	
-	//Metodo que implementa Action
+
+	/**
+	 * Método que implementa las acciones, verifica la validez de los datos (intervalos posibles y tipo de dato correcto), 
+	 * arroja ventanas de dialogo para comunicar sus errores al usuario, al presionar los botones "Guardar" y "Calcular" lleva a cabo su acción.
+	 * 
+	 * @param ActionEvent 
+	 */
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String edad= "";

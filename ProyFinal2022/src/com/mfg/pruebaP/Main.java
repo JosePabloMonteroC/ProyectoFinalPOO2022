@@ -1,5 +1,4 @@
 package com.mfg.pruebaP;
-
 //http://www.imss.gob.mx/salud-en-linea/apps-sano/riesgo-cardiovascular-colesterol
 //https://htmlcolorcodes.com/es/
 
@@ -17,7 +16,12 @@ import com.mfg.modelo.*;
 import com.mfg.vista.*;
 
 import javax.swing.JFrame;
-
+/**
+ * Clase que contiene al main
+ * 
+ * @author Emilio Román y José Pablo Montero
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) {
@@ -26,7 +30,6 @@ public class Main {
 		ControladorP controlador = new ControladorP(frame1,prueba);
 		frame1.setVisible(true);
 		
-		//prueba.Insertar(0, 33, 43, 0, 0, 0, 33, 11,1,202);
 
 	}
 
