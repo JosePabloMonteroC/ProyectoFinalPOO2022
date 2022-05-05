@@ -35,6 +35,7 @@ public class PanelUno extends JPanel{
 			"71","72","73","74","75","Mas de 75"}; 
 	static JTextField textField;
 	
+	public static JButton calcular = new JButton("Calcular");
 	public static JButton guardar = new JButton("Guardar");
 	public static JRadioButton checkBoxSM = new JRadioButton("Masculino",false);
 	public static JRadioButton checkBoxSF = new JRadioButton("Femenino",false);
@@ -212,11 +213,19 @@ public class PanelUno extends JPanel{
 		
 		
 		//Guardar
-		guardar.setBounds(3500,465,150,40);
+		guardar.setBounds(350,465,150,40);
 		guardar.setOpaque(true);
 		guardar.setForeground(Color.WHITE);
 		guardar.setBackground(new Color(0,114,3));
 		guardar.setFont(new Font("Arial",Font.BOLD,15));
+		this.add(guardar);	
+		
+		//Calcular
+		calcular.setBounds(350,465,150,40);
+		calcular.setOpaque(true);
+		calcular.setForeground(Color.WHITE);
+		calcular.setBackground(new Color(0,114,3));
+		calcular.setFont(new Font("Arial",Font.BOLD,15));
 		this.add(guardar);	
 		
 	}

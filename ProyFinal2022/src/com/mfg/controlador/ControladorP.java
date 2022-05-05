@@ -43,7 +43,7 @@ public class ControladorP implements ActionListener{
 		String edad= "";
 		String sexo= "";
 		float presion=0;
-		String hipertension=""; //EN TU BASE DE DATOS CAMBIA TODOS LOS TIPOS DE DATOS PARA QUE COINCIDAN AQUI...
+		String hipertension="";
 		String fumador="";
 		String diabetes="";
 		float HDL=0;
@@ -105,7 +105,8 @@ public class ControladorP implements ActionListener{
 				System.out.println(pulso);
 				
 				manipulaBase.Insertar(sexo, edad,presion,hipertension,fumador,diabetes,HDL,colesterol,glucosa,pulso); 
-				Icon icon = new ImageIcon("C:\\Users\\Roman\\git\\ProyectoFinalPOO2022\\ProyFinal2022\\src\\com\\mfg\\controlador\\bolitaOK.jpg");
+				//Icon icon = new ImageIcon("C:\\Users\\Roman\\git\\ProyectoFinalPOO2022\\ProyFinal2022\\src\\com\\mfg\\controlador\\bolitaOK.jpg");
+				Icon icon = new ImageIcon("C:\\Users\\pepem\\Documents\\ECLIPSE\\ProyectoFinalPOO2022\\ProyFinal2022\\src\\com\\mfg\\controlador\\bolitaOK.jpg");
 				JOptionPane.showMessageDialog(null, "Los datos han sido insertados correctamente", null, JOptionPane.PLAIN_MESSAGE, icon);
 				
 				} 	catch(Exception ex){
@@ -118,7 +119,8 @@ public class ControladorP implements ActionListener{
 			
 				}
 			else if(e.getSource() == PanelUno.calcular) {
-				Icon icon = new ImageIcon("C:\\Users\\Roman\\git\\ProyectoFinalPOO2022\\ProyFinal2022\\src\\com\\mfg\\controlador\\bolita.png");
+				//Icon icon = new ImageIcon("C:\\Users\\Roman\\git\\ProyectoFinalPOO2022\\ProyFinal2022\\src\\com\\mfg\\controlador\\bolita.png");
+				Icon icon = new ImageIcon("C:\\Users\\pepem\\Documents\\ECLIPSE\\ProyectoFinalPOO2022\\ProyFinal2022\\src\\com\\mfg\\controlador\\bolita.png");
 				JOptionPane.showMessageDialog(null, "     Próximamente", null, JOptionPane.PLAIN_MESSAGE, icon);
 			}
 			
