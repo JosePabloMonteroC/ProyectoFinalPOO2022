@@ -19,6 +19,12 @@ import javax.swing.border.Border;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 
+/**
+ * Clase que contiene el panel principal, aquí se encuentran los botones, campos de texto y etiquetas que se usan en la interfaz
+ * 
+ * @author Emilio Román y José Pablo Montero
+ *
+ */
 public class PanelUno extends JPanel{
 	
 	// Variables de inicializacion
@@ -46,7 +52,9 @@ public class PanelUno extends JPanel{
 	public static JTextField entradaP = new JTextField();
 	
 	
-	
+	/**
+	 * Método constructor donde se declaran las caracteristicas de cada uno de los elementos del panel
+	 */
 	public PanelUno() {
 		this.setLayout(null);
 		

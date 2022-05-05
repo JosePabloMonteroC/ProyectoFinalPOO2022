@@ -1,13 +1,22 @@
 package com.mfg.controlador;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 import com.mfg.modelo.*;
 import com.mfg.vista.*;
-
+/**
+ * Clase encargada de controlar la interfaz y las acciones que se pueden llevar a cabo en ella. 
+ * Utilizando "Action Listener" se le asignan las acciones a los botones
+ * 
+ * @author Emilio Román y José Pablo Montero
+ *
+ */
 public class ControladorP implements ActionListener{
 	
 	// Instancia del frame principal
@@ -19,10 +28,16 @@ public class ControladorP implements ActionListener{
 	this.manipulaBase = manupulaB;
 	// Al botón que genera acción se debe asignar un addActionListener
 	PanelUno.guardar.addActionListener(this);
+	PanelUno.calcular.addActionListener(this);
 	}
 	
-	
-	//Metodo que implementa Action
+
+	/**
+	 * Método que implementa las acciones, verifica la validez de los datos (intervalos posibles y tipo de dato correcto), 
+	 * arroja ventanas de dialogo para comunicar sus errores al usuario, al presionar los botones "Guardar" y "Calcular" lleva a cabo su acción.
+	 * 
+	 * @param ActionEvent 
+	 */
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String edad= "";
@@ -39,7 +54,7 @@ public class ControladorP implements ActionListener{
 		
 			if(e.getSource() == PanelUno.guardar){
 				try {
-					
+
 				edad = PanelUno.lista.getSelectedItem().toString(); 
 				presion = Float.parseFloat(PanelUno.entradaPS.getText());
 					if (presion>200||presion<40) {
@@ -90,6 +105,8 @@ public class ControladorP implements ActionListener{
 				System.out.println(pulso);
 				
 				manipulaBase.Insertar(sexo, edad,presion,hipertension,fumador,diabetes,HDL,colesterol,glucosa,pulso); 
+				Icon icon = new ImageIcon("C:\\Users\\Roman\\git\\ProyectoFinalPOO2022\\ProyFinal2022\\src\\com\\mfg\\controlador\\bolitaOK.jpg");
+				JOptionPane.showMessageDialog(null, "Los datos han sido insertados correctamente", null, JOptionPane.PLAIN_MESSAGE, icon);
 				
 				} 	catch(Exception ex){
 					JOptionPane.showMessageDialog(null,ex.toString(), "Error de entrada", JOptionPane.ERROR_MESSAGE);
@@ -101,7 +118,8 @@ public class ControladorP implements ActionListener{
 			
 				}
 			else if(e.getSource() == PanelUno.calcular) {
-				//Aqui se calculara el riesgo cardiovascular
+				Icon icon = new ImageIcon("C:\\Users\\Roman\\git\\ProyectoFinalPOO2022\\ProyFinal2022\\src\\com\\mfg\\controlador\\bolita.png");
+				JOptionPane.showMessageDialog(null, "     Próximamente", null, JOptionPane.PLAIN_MESSAGE, icon);
 			}
 			
 
